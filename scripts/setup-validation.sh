@@ -4,7 +4,7 @@
 # ============================================================================
 # Performs comprehensive system checks before applying dotfiles.
 # This script validates shell compatibility, checks for conflicting configs,
-# and ensures all prerequisites are met.
+# and ensures all prerequisites are met & more
 # ============================================================================
 
 set -euo pipefail
@@ -19,7 +19,6 @@ log_info()  { echo -e "${GREEN}[INFO]${NC} $1"; }
 log_warn()  { echo -e "${YELLOW}[WARN]${NC} $1"; }
 log_error() { echo -e "${RED}[ERROR]${NC} $1"; }
 
-# --- 1. Verify Shell Environment Compatibility ---
 check_shell_compatibility() {
     log_info "Checking shell environment compatibility..."
 
@@ -42,7 +41,6 @@ check_shell_compatibility() {
     fi
 }
 
-# --- 2. Check for Conflicting Configurations ---
 check_conflicting_configs() {
     log_info "Checking for conflicting configurations in home directory..."
 
@@ -68,7 +66,6 @@ check_conflicting_configs() {
     fi
 }
 
-# --- 3. Validate System Prerequisites ---
 check_prerequisites() {
     log_info "Validating system prerequisites..."
 
@@ -94,7 +91,6 @@ check_prerequisites() {
     fi
 }
 
-# --- Main Execution ---
 main() {
     echo "============================================"
     echo " Pre-Setup Environment Validation"
